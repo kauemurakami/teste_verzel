@@ -12,7 +12,7 @@ class RxUser {
 }
 
 class Usuario {
-  Usuario(nome, telefone, endereco, dataNasc, cpf, cep, email, senha);
+  Usuario({nome, email, senha, dataNasc, cpf, cep, telefone, endereco});
 
   final rx = RxUser();
 
