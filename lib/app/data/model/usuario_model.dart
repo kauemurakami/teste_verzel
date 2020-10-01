@@ -2,6 +2,7 @@ import 'package:get/state_manager.dart';
 
 class RxUser {
   final nome = ''.obs;
+  final id = 0.obs;
   final telefone = ''.obs;
   final endereco = ''.obs;
   final dataNasc = ''.obs;
@@ -12,10 +13,11 @@ class RxUser {
 }
 
 class Usuario {
-  Usuario({nome, email, senha, dataNasc, cpf, cep, telefone, endereco});
+  Usuario({id, nome, email, senha, dataNasc, cpf, cep, telefone, endereco});
 
   final rx = RxUser();
-
+  get id => rx.id.value;
+  set id(value) => rx.id.value = value;
   get nome => rx.nome.value;
   set nome(value) => rx.nome.value = value;
   get telefone => rx.telefone.value;
@@ -32,4 +34,30 @@ class Usuario {
   set email(value) => rx.email.value = value;
   get senha => rx.senha.value;
   set senha(value) => rx.senha.value = value;
+
+  Usuario.fromJson(Map<String, dynamic> json) {
+    this.id = json['id'];
+    this.nome = json['nome'];
+    this.email = json['email'];
+    this.senha = json['senha'];
+    this.dataNasc = json['dataNasc'];
+    this.cpf = json['cpf'];
+    this.cep = json['cep'];
+    this.telefone = json['telefone'];
+    this.endereco = json['endereco'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['nome'] = this.nome;
+    data['email'] = this.email;
+    data['senha'] = this.senha;
+    data['dataNasc'] = this.dataNasc;
+    data['cpf'] = this.cpf;
+    data['cep'] = this.cep;
+    data['telefone'] = this.telefone;
+    data['endereco'] = this.endereco;
+
+    return data;
+  }
 }
