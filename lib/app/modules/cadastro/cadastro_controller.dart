@@ -57,7 +57,6 @@ class CadastroController extends GetxController {
     if (u != null) {
       usuarioRepository.cadastroUsuario(u);
       print(u.id);
-      Get.offAllNamed(Routes.ROUTE_HOME);
     }
   }
 }

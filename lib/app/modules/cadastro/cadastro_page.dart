@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:teste_verzel/app/modules/cadastro/cadastro_controller.dart';
+import 'package:teste_verzel/app/routes/app_routes.dart';
 import 'package:teste_verzel/app/utils/keys.dart';
 import 'package:teste_verzel/app/utils/masks.dart';
 import 'package:teste_verzel/app/widgets/custom_button.dart';
@@ -92,6 +93,7 @@ class CadastroPage extends GetView<CadastroController> {
                             if (form.validate()) {
                               form.save();
                               controller.cadastrar();
+                              Get.offAllNamed(Routes.ROUTE_HOME);
                             } else {
                               print('erro ao entrar');
                             }
