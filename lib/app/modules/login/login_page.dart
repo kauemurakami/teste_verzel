@@ -24,6 +24,7 @@ class LoginPage extends GetView<LoginController> {
                   children: [
                     Flexible(
                       child: CustomTextFormField(
+                        type: TextInputType.text,
                         text: 'Email',
                         emailCheck: controller.isEmail,
                         onChanged: (value) => controller.onChangedEmail(value),
@@ -43,6 +44,7 @@ class LoginPage extends GetView<LoginController> {
                   children: [
                     Flexible(
                       child: CustomTextFormField(
+                        type: TextInputType.text,
                         text: 'Senha',
                         obscure: controller.viewPassword,
                         emailCheck: controller.isEmail,

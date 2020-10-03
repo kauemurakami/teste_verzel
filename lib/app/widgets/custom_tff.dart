@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:teste_verzel/app/theme/app_colors.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -14,8 +15,10 @@ class CustomTextFormField extends StatelessWidget {
   final TextEditingController controller;
   final TextDirection direction;
   final int max;
+  final List<MaskTextInputFormatter> formatter;
 
   CustomTextFormField({
+    this.formatter = const [],
     this.emailCheck,
     this.text,
     this.onChanged,
@@ -33,6 +36,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      inputFormatters: this.formatter,
       maxLength: this.max,
       textDirection: this.direction,
       controller: this.controller,
