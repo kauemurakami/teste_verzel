@@ -15,6 +15,7 @@ class LoginPage extends GetView<LoginController> {
         child: Column(
           children: [
             Container(
+              padding: EdgeInsets.only(top: 24.0, bottom: 16.0),
               child: Image.asset('assets/images/login.png'),
             ),
             Form(
@@ -40,6 +41,7 @@ class LoginPage extends GetView<LoginController> {
                     )
                   ],
                 ),
+                Padding(padding: EdgeInsets.only(top: 24.0)),
                 Row(
                   children: [
                     Flexible(
@@ -68,7 +70,7 @@ class LoginPage extends GetView<LoginController> {
                 ),
                 Container(
                   margin: EdgeInsets.only(
-                    top: 24.0,
+                    top: 32.0,
                   ),
                   child: CustomButtonWidget(
                     text: 'Entrar',

@@ -10,8 +10,6 @@ class LoginBinding implements Bindings {
     Get.lazyPut<LoginController>(() => LoginController(
           usuarioRepository: UsuarioRepository(db: DB()),
         ));
-    Get.lazyPut<AuthController>(() => AuthController(
-          usuarioRepository: UsuarioRepository(db: DB()),
-        ));
+    Get.lazyPut<AuthController>(() => AuthController());
   }
 }
